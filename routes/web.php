@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+// CONTROLLERS
+
+use App\Http\Controllers\Admin\ComicController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Versione integrale
+
+// Route::get('/comics', [ComicController::class, 'index'])
+
+// Versione con rotte automatiche 
+
+Route::resource('comics', ComicController::class);

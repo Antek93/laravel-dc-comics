@@ -10,22 +10,14 @@
         @vite('resources/js/app.js')
     </head>
     <body>
-
+        <header>
+            
+        </header>
         <main>
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
-
-                        <div class="card">
-                            <div class="card-body">
-                                
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+           @yield('content')
         </main>
+        <footer>
 
+        </footer>
     </body>
 </html>

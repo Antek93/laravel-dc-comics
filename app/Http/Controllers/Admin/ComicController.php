@@ -21,7 +21,7 @@ class ComicController extends Controller
     {
         $comics = Comic::all();
 
-        dd($comics);
+        return view('comics.index');
     }
 
     /**

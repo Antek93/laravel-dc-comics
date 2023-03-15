@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">
-                            Comic:
+                            {{ $comics->title }}
                         </h1>
                     </div>
                 </div>
@@ -15,17 +15,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($comics as $comic)
-                <div class="col-4">
-                  <div class="card text-center">
+            <div class="col">
+                <div class="card text-center">
                     <div class="card-body">
                         <p>
-                            {{ $comic->description }}
+                            {{ $comics->description }}
                         </p>
+                        <div>
+                            {{ $comics->price }}€
+                        </div>
+                        <div>
+                            {{ $comics->series }}
+                        </div>
+                        <div>
+                            {{ $comics->sale_date }}
+                        </div>
+                        <div>
+                            {{ $comics->type }}
+                        </div>
                     </div>
-                  </div>
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
 @endsection

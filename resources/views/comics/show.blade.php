@@ -14,24 +14,49 @@
 
             </div>
         </div>
-        <div class="row">
+        <div class="row my-3">
             <div class="col">
                 <div class="card text-center">
                     <div class="card-body">
-                        <p>
-                            {{ $comics->description }}
-                        </p>
                         <div>
-                            {{ $comics->price }}€
+                            <div>
+                                Descrizione:
+                            </div>
+                            <p>
+                                {{ $comics->description }}
+                            </p>
                         </div>
                         <div>
-                            {{ $comics->series }}
+                            <span class="fw-bold">
+                                Prezzo:
+                            </span>
+                            <span>
+                                {{ $comics->price }}€
+                            </span>
                         </div>
                         <div>
-                            {{ $comics->sale_date }}
+                            <span class="fw-bold">
+                                Serie:
+                            </span>
+                            <span>
+                                {{ $comics->series }}                           
+                            </span>
                         </div>
                         <div>
-                            {{ $comics->type }}
+                            <span class="fw-bold">
+                                Data uscita:
+                            </span>
+                            <span>
+                                {{ $comics->sale_date }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="fw-bold">
+                                Tipo:
+                            </span>
+                            <span>
+                                {{ $comics->type }}
+                            </span>
                         </div>
                     </div>
                 </div>

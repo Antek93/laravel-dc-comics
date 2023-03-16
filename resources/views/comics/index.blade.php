@@ -34,7 +34,7 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-warning mx-2">
+                                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning mx-2">
                                         Modifica
                                     </a>
                                 </div>

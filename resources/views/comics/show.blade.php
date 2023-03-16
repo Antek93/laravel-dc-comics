@@ -35,6 +35,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center py-2">
+                    <a href="{{ route('comics.index') }}">
+                        <button type="button" class="btn btn-danger">
+                            Return
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

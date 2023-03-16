@@ -41,9 +41,9 @@
                             placeholder="Inserisci serie del prodotto">
                     </div>
                     <div class="mb-3">
-                        <label for="saleDate" class="form-label">Data di uscita</label>
-                        <input name="saleDate" type="text" class="form-control" id="saleDate" required
-                            placeholder="Inserisci data di uscita del prodotto">
+                        <label for="sale_date" class="form-label">Data di uscita</label>
+                        <input name="sale_date" type="text" class="form-control" id="sale_date" required
+                            placeholder="Inserisci data di uscita del prodotto ">
                     </div>
                     <div class="mb-3">
                         <label for="type" class="form-label">Inserisci tipo prodotto</label>

@@ -20,9 +20,23 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <h3 class="card-title">{{ $comic->title }}</h3>
-                            <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
-                                Vedi dettagli
-                            </a>
+                            <div class="d-flex">
+                                <div>
+                                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
+                                        Vedi dettagli
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="{{ route('comics.create', $comic->id) }}" class="btn btn-warning mx-2">
+                                        Aggiorna
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-danger">
+                                        Elimina
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Comic;
 
+//helpers
+
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -42,6 +45,20 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate ([
+            'title' => 'required|max:50',
+            'description' => 'required|max:1000|min:10',
+            'thumb' => 'max:255',
+            'price' => 'required|numeric|',
+            'series' => 'required|max:50|min:10',
+            'sale_date' => 'required|max:50|min:10',
+            'type' => [
+                'required',
+                Rule::in(['comics', 'comic', 'fumetto', 'comic book'])
+            ],
+        ]);
+
         $data = $request-> all();
 
         $newComic = new Comic;
@@ -96,6 +113,19 @@ class ComicController extends Controller
 
         $comics = Comic::findOrFail($id);
 
+        $request->validate ([
+            'title' => 'required|max:50',
+            'description' => 'required|max:1000|min:10',
+            'thumb' => 'max:255',
+            'price' => 'required|numeric|',
+            'series' => 'required|max:50|min:10',
+            'sale_date' => 'required|max:50|min:10',
+            'type' => [
+                'required',
+                Rule::in(['comics', 'comic', 'fumetto', 'comic book'])
+            ],
+        ]);
+
         $comics->Title = $data['title'];
         $comics->Description = $data['description'];
         $comics->Thumb = $data['thumb'];
@@ -116,6 +146,9 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comics = Comic::findOrFail($id);
+        $comics->delete();
+        
+        return redirect()->route('comics.index');
     }
 }

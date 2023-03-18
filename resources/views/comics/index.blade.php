@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col text-center my-3">
-                <a href="{{ route('comics.store') }}" class="btn btn-success mx-2">
+                <a href="{{ route('comics.create') }}" class="btn btn-success mx-2">
                     Crea nuovo prodotto
                 </a>
             </div>
@@ -39,9 +39,14 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-danger">
-                                        Elimina
-                                    </a>
+                                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            Elimina
+                                        </button>
+                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>
